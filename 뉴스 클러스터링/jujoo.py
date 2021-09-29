@@ -19,6 +19,7 @@ def solution(str1:str, str2:str) -> int:
 
     return int(answer * 65536)
 
+
 # 2 -> O(n)
 def convert(s:str) -> List[str]:
     arr = []
