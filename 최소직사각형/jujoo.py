@@ -1,5 +1,7 @@
-# O(n)
+
 from typing import List
+
+# 1 : # O(n)
 def solution(sizes : List[List[int]]) -> int:
     # 지갑 사이즈
     w_max, h_max = 0, 0
@@ -12,3 +14,8 @@ def solution(sizes : List[List[int]]) -> int:
         w_max = max(w_max, w)
         h_max = max(h_max, h)
     return w_max * h_max
+
+# 2
+import numpy as np
+def solution(sizes):
+    return int(max(np.max(np.array(sizes), 1)) * max(np.min(np.array(sizes), 1)))
