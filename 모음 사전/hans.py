@@ -1,14 +1,14 @@
 def solution(word):
     answer = 0
     st = ''
-    d = {'A':'E', 'E':'I', 'I':'O', 'O':'U'}
+    d = {'A':'E', 'E':'I', 'I':'O', 'O':'U'} # next alpha
     while st!=word:
         if len(st)<5:
             st+='A'
         else:
-            while st[-1] == 'U':
+            while st[-1] == 'U':             # 끝이 U이면 자르기
                 st = st[:-1]
-            st = st[:-1] + d[st[-1]]
+            st = st[:-1] + d[st[-1]]         # 다음 순서로 갱신
         # print(st)
         answer += 1
     return answer
