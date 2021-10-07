@@ -18,3 +18,4 @@
 |9/30|[2021 위클리 챌린지 8주차](https://programmers.co.kr/learn/courses/30/lessons/86491)  | 1 | 
 |10/5|[DFS/BFS 여행경로](https://programmers.co.kr/learn/courses/30/lessons/43164?language=python3)  | 3 | 
 |10/7|[다음 큰 숫자](https://programmers.co.kr/learn/courses/30/lessons/84512)  | 2 |
+|10/12|[합승 택시 요금](https://programmers.co.kr/learn/courses/30/lessons/72413)|3|
