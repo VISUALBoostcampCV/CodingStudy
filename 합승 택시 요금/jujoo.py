@@ -1,4 +1,4 @@
-<--실패-->
+# <--실패-->
 from collections import deque, defaultdict
 def find_path(s, target, path):
     q = deque([[s]])  # List[List[path]]
