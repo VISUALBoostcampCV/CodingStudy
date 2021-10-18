@@ -14,8 +14,9 @@
 
 | 날짜 | 문제 | Level |
 |---|---|---|
-|9/28|[2018 KAKAO BLIND RECRUITMENT 뉴스 클러스터링](https://programmers.co.kr/learn/courses/30/lessons/17677?language=python3)  | 2 | 
-|9/30|[최소직사각형](https://programmers.co.kr/learn/courses/30/lessons/86491)  | 1 | 
+|9/28|[[2018 KAKAO BLIND RECRUITMENT] 뉴스 클러스터링](https://programmers.co.kr/learn/courses/30/lessons/17677?language=python3)  | 2 | 
+|9/30|[[2021 위클리 챌린지] 최소직사각형](https://programmers.co.kr/learn/courses/30/lessons/86491)  | 1 | 
 |10/5|[여행경로](https://programmers.co.kr/learn/courses/30/lessons/43164?language=python3)  | 3 | 
-|10/7|[모음 사전](https://programmers.co.kr/learn/courses/30/lessons/84512)  | 2 |
-|10/12|[2021 KAKAO BLIND RECRUITMENT 합승 택시 요금](https://programmers.co.kr/learn/courses/30/lessons/72413)|3|
+|10/7|[[2021 위클리 챌린지] 모음 사전](https://programmers.co.kr/learn/courses/30/lessons/84512)  | 2 |
+|10/12|[[2021 KAKAO BLIND RECRUITMENT] 합승 택시 요금](https://programmers.co.kr/learn/courses/30/lessons/72413)|3|
+|10/19|[[2021 위클리 챌린지] 교점에 별 만들기](https://programmers.co.kr/learn/courses/30/lessons/87377)|2|
