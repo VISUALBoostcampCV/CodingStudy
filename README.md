@@ -21,3 +21,4 @@
 |10/12|[[2021 KAKAO BLIND RECRUITMENT] 합승 택시 요금](https://programmers.co.kr/learn/courses/30/lessons/72413)|3|
 |10/19|[[2021 위클리 챌린지] 교점에 별 만들기](https://programmers.co.kr/learn/courses/30/lessons/87377)|2|
 |10/21|[124 나라의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12899?language=python3)|2|
+|10/26|[[2021 카카오 채용연계형 인턴십] 표 편집](https://programmers.co.kr/learn/courses/30/lessons/81303)|3|
