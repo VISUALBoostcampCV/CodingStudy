@@ -9,7 +9,6 @@ def solution(n):
     while n >= s:
         factor+=1
         s += 3**factor
-    lenth = factor
     s -= 3**factor
     n -= s
     
