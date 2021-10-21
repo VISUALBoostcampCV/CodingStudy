@@ -8,9 +8,9 @@ def test(num,new):
     if num <= 3:
         return
     if check(num) == 4:
-        num = int(num/3) - 1
+        num = num//3 -1     #num = int(num/3) - 1
     else:
-        num=int(num/3)
+        num = num//3    #num=int(num/3)
     test(num, new)
     
 def solution(n):
