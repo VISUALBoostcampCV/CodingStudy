@@ -1,10 +1,7 @@
 def calc124(n):
-    
     ans = ["1","2","4"]
     answer = ""
-    
     n -= 1
-
     x = int(n/3)
     y = int(n%3)
     
@@ -15,8 +12,6 @@ def calc124(n):
 
     answer+=ans[y]
     return answer
-    
-    
 
 def solution(n):
     answer = calc124(n)
