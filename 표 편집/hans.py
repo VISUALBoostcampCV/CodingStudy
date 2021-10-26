@@ -21,36 +21,45 @@ def solution(n, k, cmd):
     d = dict()
     res = ['O']*n
     for i in range(n):
-        d[i] = [i,i]
-    d[n]=[n-1,n-1]
-    d[-1]=[0,0]
+        d[i] = [i-1,i+1]
+    d[0][0]=0
+    d[n-1][1]=n-1
 
     deleted = []
     for c in cmd:
         if c[0]=='D':
-            k=down(int(c[-1]),k,d,res)
-                
+            for i in range(int(c[-1])):
+                k=d[k][1]
         elif c[0]=='U':
-            k=up(int(c[-1]),k,d,res)
+            for i in range(int(c[-1])):
+                k=d[k][0]
         elif c[0] == 'C':
             res[k] = 'X'
             deleted.append(k)
-            print(d[k][0])
-            d[k][0]=d[k+1][0]
-            d[k][1]=d[k-1][1]
-            new_k=down(1,k,d,res)
-            if new_k==k:
-                k=up(1,k,d,res)
+            u1,d1 = d[k][0], d[k][1]
+            d[u1][1]=k
+            d[d1][0]=k
+            if res[d1]=='X':
+                k=u1
+            else:
+                k=d1
         else:
             p = deleted.pop()
             res[p]='O'
-            d[p] = (p,p)
+            u1, d1 = p-1, p+1
+            d[p] = [u1,d1]
+            if u1>=0:
+                d[u1][1] = p
+                d[d[u1][0]][1]=p
+            if d1<n:
+                d[d1][0] = p
+                d[d[d1][1]][0]=p
             
     return ''.join(res)
 
-n = 8
-k = 2
-cmd = ["D 2","C","U 3","C","D 4","C","U 2","Z","Z"]
-cmd2 = ["D 2","C","U 3","C","D 4","C","U 2","Z","Z","U 1","C"]
-s = solution(n,k,cmd2)
-print(s)
+# n = 8
+# k = 2
+# cmd = ["D 2","C","U 3","C","D 4","C","U 2","Z","Z"]
+# cmd2 = ["D 2","C","U 3","C","D 4","C","U 2","Z","Z","U 1","C"]
+# s = solution(n,k,cmd2)
+# print(s)
