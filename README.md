@@ -23,4 +23,4 @@
 |10/21|[124 나라의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12899?language=python3)|2|
 |10/26|[[2021 카카오 채용연계형 인턴십] 표 편집](https://programmers.co.kr/learn/courses/30/lessons/81303)|3|
 |10/28|[스킬트리](https://programmers.co.kr/learn/courses/30/lessons/49993?language=python3)|2|
-|11/2|[[2018 KAKAO BLIND RECRUITMENT]프렌즈4블록](https://programmers.co.kr/learn/courses/30/lessons/17679)|2|
+|11/2|[[2018 KAKAO BLIND RECRUITMENT] 프렌즈4블록](https://programmers.co.kr/learn/courses/30/lessons/17679)|2|
