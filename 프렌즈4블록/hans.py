@@ -8,19 +8,19 @@ def solution(m, n, board):
         for y in range(m-1):
             for x in range(n-1):
                 sample = board_list[y][x]
-                if sample=='x':
+                if sample=='.':
                     continue
                 for m_x, m_y in square:
                     new_x, new_y = x+m_x, y+m_y
                     if board_list[new_y][new_x]!=sample:
                         break
                 else:
-                    delete.update([(y+j,x+i) for j,i in square])
+                    delete.update([(y+j,x+i) for i,j in square])
         for d_y, d_x in delete:
-            board_list[d_y][d_x]='x'
+            board_list[d_y][d_x]='.'
         for x in range(n):
-            lst = [board_list[y][x] for y in range(m) if board_list[y][x]!='x']
-            lst += ['x' for i in range(m-len(lst))]
+            lst = [board_list[y][x] for y in range(m-1,-1,-1) if board_list[y][x]!='.']
+            lst += ['.' for i in range(m-len(lst))]
             for y in range(m):
                 board_list[y][x]=lst.pop()
                 
@@ -33,16 +33,16 @@ def solution(m, n, board):
 
 
 '''
-테스트 1 〉	통과 (0.06ms, 10.4MB)
+테스트 1 〉	통과 (0.06ms, 10.3MB)
 테스트 2 〉	통과 (0.08ms, 10.3MB)
-테스트 3 〉	통과 (0.02ms, 10.3MB)
-테스트 4 〉	통과 (1.39ms, 10.4MB)
-테스트 5 〉	실패 (6.20ms, 10.3MB) ??????????????????????
-테스트 6 〉	통과 (6.03ms, 10.4MB)
-테스트 7 〉	통과 (0.76ms, 10.3MB)
-테스트 8 〉	통과 (1.50ms, 10.3MB)
-테스트 9 〉	통과 (0.06ms, 10.3MB)
-테스트 10 〉	통과 (0.66ms, 10.2MB)
-테스트 11 〉	통과 (1.95ms, 10.4MB)
+테스트 3 〉	통과 (0.03ms, 10.4MB)
+테스트 4 〉	통과 (1.69ms, 10.3MB)
+테스트 5 〉	통과 (90.86ms, 10.3MB)
+테스트 6 〉	통과 (7.96ms, 10.3MB)
+테스트 7 〉	통과 (1.15ms, 10.4MB)
+테스트 8 〉	통과 (1.42ms, 10.4MB)
+테스트 9 〉	통과 (0.08ms, 10.4MB)
+테스트 10 〉	통과 (0.85ms, 10.3MB)
+테스트 11 〉	통과 (3.44ms, 10.3MB)
 
 '''
