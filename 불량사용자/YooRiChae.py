@@ -1,12 +1,14 @@
 def depth(temp_ban, ban_users,result, idx):
     for user in temp_ban[idx]:
         ban_users.append(user)
+
         if idx == len(temp_ban)-1:
             if len(set(ban_users)) != len(temp_ban): pass
             elif set(ban_users) in result: pass
             else:
                 result.append(set(ban_users))
             ban_users.pop()
+            
         else:
             depth(temp_ban,ban_users,result, idx+1)
             ban_users.pop()
@@ -20,8 +22,8 @@ def check(user, ban):
     return 1
 
 def solution(user_id, banned_id):
-    temp_ban=[[] for i in range(0, len(banned_id))]
-    
+    #  불량 사용자 아이디에서 일치하는 아이디 구하기
+    temp_ban=[[] for i in range(0, len(banned_id))]    
     for i, ban in enumerate(banned_id):
         for user in user_id:
             if len(ban) == len(user):
@@ -31,6 +33,7 @@ def solution(user_id, banned_id):
     result = []
     ban_users = []
     
+    # 경우의 수
     depth(temp_ban, ban_users, result, 0)
     
     return len(result)
