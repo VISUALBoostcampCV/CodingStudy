@@ -24,3 +24,5 @@
 |10/26|[[2021 카카오 채용연계형 인턴십] 표 편집](https://programmers.co.kr/learn/courses/30/lessons/81303)|3|
 |10/28|[스킬트리](https://programmers.co.kr/learn/courses/30/lessons/49993?language=python3)|2|
 |11/2|[[2018 KAKAO BLIND RECRUITMENT] 프렌즈4블록](https://programmers.co.kr/learn/courses/30/lessons/17679)|2|
+|11/4|[[2019 카카오 개발자 겨울 인턴십] 불량 사용자](https://programmers.co.kr/learn/courses/30/lessons/64064)|3|
+|11/9|[금과 은 운반하기](https://programmers.co.kr/learn/courses/30/lessons/86053)|3|
