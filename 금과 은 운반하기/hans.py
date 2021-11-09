@@ -4,11 +4,14 @@ from collections import defaultdict
 def solution(a, b, g, s, w, t):
     answer = 0
     d = defaultdict(int)
+    ban_list = [1]*len(t)
     t_np = np.array(t)
     last = 0
     while a>0 or b>0:
-        t_min = np.min(t_np)
+        t_min = np.min(t_np[ban_list]) if len(t)>1 else t_np[0]
         for i, _t in enumerate(t_np):
+            if ban_list[i]==0:
+                continue
             new_t = _t-t_min
             if new_t <= 0:
                 _g = min(a,g[i],w[i])
@@ -19,12 +22,14 @@ def solution(a, b, g, s, w, t):
                 d[i] += 1
             t_np[i] = new_t
             last = i
+            if _g==0 and _s==0:
+                ban_list[i]=0
     
     print(d)
     
     return max([2*t[k]*v for k,v in d.items()]) - t[last]
-# a,b,g,s,w,t = 10, 10, [100], [100], [7], [10]
-a,b,g,s,w,t = 90,500,[70,70,0],[0,0,500],[100,100,2],[4,8,1]
+a,b,g,s,w,t = 10, 10, [100], [100], [7], [10]
+# a,b,g,s,w,t = 90,500,[70,70,0],[0,0,500],[100,100,2],[4,8,1]
 s = solution(a,b,g,s,w,t)
 print(s)
 '''
