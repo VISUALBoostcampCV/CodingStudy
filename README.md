@@ -27,7 +27,7 @@
 |11/4|[[2019 카카오 개발자 겨울 인턴십] 불량 사용자](https://programmers.co.kr/learn/courses/30/lessons/64064)|3|
 |11/9|[금과 은 운반하기](https://programmers.co.kr/learn/courses/30/lessons/86053)|3|
 |11/11|[점프와 순간 이동](https://programmers.co.kr/learn/courses/30/lessons/12980)|2|
-
+|11/16|[순위](https://programmers.co.kr/learn/courses/30/lessons/49191?language=python3)|3|
 
 ## Members
 
