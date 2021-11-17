@@ -1,14 +1,16 @@
-# -- 1
+# O(n^2)
 from collections import defaultdict
 def solution(n, results):
     answer = 0
     win = defaultdict(set) # 이긴 player 저장
     lose = defaultdict(set) # 진 player 저장
     
+    # O(n)
     for winner, loser in results:
         win[winner].add(loser)
         lose[loser].add(winner)
     
+    # O(n^2)
     for player in range(1, n + 1):
         # player를 이긴 winner -> winner를 이긴 player도 이길 수 있음
         for winner in lose[player]: 
@@ -17,6 +19,7 @@ def solution(n, results):
         for loser in win[player]:
             lose[loser] |= lose[player]
 
+    # O(n)
     for player in range(1, n + 1):
         if len(win[player]) + len(lose[player]) == n - 1:
             answer += 1
