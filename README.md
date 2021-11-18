@@ -1,5 +1,4 @@
-# VISUALBoostcampCV CodingStudy
-### 2021 Boostcamp 2기 CV VISUAL팀 알고리즘 스터디
+# 2021 Boostcamp 2기 CV VISUAL팀 알고리즘 스터디
 ## 사용언어
 <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/></a>
 
