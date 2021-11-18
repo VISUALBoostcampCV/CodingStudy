@@ -5,6 +5,7 @@
 
 + 모더레이터가 문제 지정
 + 일주일에 2문제
+  + 11/17 부터 1일 1문제 
 + [Programmers](https://programmers.co.kr/) 에 있는 난이도(Level 2 ~ 3)
 
 ## 사용언어
@@ -28,7 +29,8 @@
 |11/9|[금과 은 운반하기](https://programmers.co.kr/learn/courses/30/lessons/86053)|3|
 |11/11|[점프와 순간 이동](https://programmers.co.kr/learn/courses/30/lessons/12980)|2|
 |11/16|[순위](https://programmers.co.kr/learn/courses/30/lessons/49191?language=python3)|3|
-
+|11/17|[튜플](https://programmers.co.kr/learn/courses/30/lessons/64065)|2|
+|11/18|[[2019 카카오 개발자 겨울 인턴십] 아이템 줍기](https://programmers.co.kr/learn/courses/30/lessons/87694)|3|
 ## Members
 
 |   <div align="center">김주영 </div>	|  <div align="center">오현세 </div> 	|  <div align="center">채유리 </div> 	|  <div align="center">배상우 </div> 	|  <div align="center">최세화 </div>  | <div align="center">송정현 </div> |
