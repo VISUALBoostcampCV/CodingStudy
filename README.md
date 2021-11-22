@@ -38,3 +38,5 @@
 |11/16|[순위](https://programmers.co.kr/learn/courses/30/lessons/49191?language=python3)|3|
 |11/17|[튜플](https://programmers.co.kr/learn/courses/30/lessons/64065)|2|
 |11/18|[[2019 카카오 개발자 겨울 인턴십] 아이템 줍기](https://programmers.co.kr/learn/courses/30/lessons/87694)|3|
+|11/22|[수식 최대화](https://programmers.co.kr/learn/courses/30/lessons/67257)|2|
+|11/23|[다단계 칫솔 판매](https://programmers.co.kr/learn/courses/30/lessons/77486)|3|
