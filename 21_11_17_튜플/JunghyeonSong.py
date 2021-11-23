@@ -1,6 +1,6 @@
 # for문에서 list 탐색하느라 오래걸리는 버전
 def solution(s):
-    tuples = [list(map(int, i.split(','))) for i in s[2:-2].split('},{')]
+    tuples = [list(map(int, _s.split(','))) for _s in s[2:-2].split('},{')]
     tuples.sort(key=len)
     
     answer = []
@@ -33,7 +33,7 @@ def solution(s):
 
 # for문에서 set 탐색해서 빨리 탐색하는 버전
 def solution(s):
-    tuples = [list(map(int, i.split(','))) for i in s[2:-2].split('},{')]
+    tuples = [list(map(int, _s.split(','))) for _s in s[2:-2].split('},{')]
     tuples.sort(key=len)
     
     answer = []
