@@ -20,13 +20,8 @@ def solution(enroll, referral, seller, amount):
                     
         profit_dict[seller] += profit - offer
         
-        # 자신을 추천한 직원이 없는 경우
-        if ref_dict[seller] == '-':
-            # 끝냄
-            return
-        
-        # 추천한 직원이 있는 경우
-        else:
+        # 자신을 추천한 직원이 있는 경우
+        if ref_dict[seller] != '-':
             profit_calculate(ref_dict[seller], offer)        
         
         
@@ -43,15 +38,15 @@ def solution(enroll, referral, seller, amount):
 '''
 테스트 1 〉	통과 (0.02ms, 10.3MB)
 테스트 2 〉	통과 (0.08ms, 10.3MB)
-테스트 3 〉	통과 (0.06ms, 10.2MB)
-테스트 4 〉	통과 (0.26ms, 10.3MB)
-테스트 5 〉	통과 (1.79ms, 10.3MB)
-테스트 6 〉	통과 (2.56ms, 13.1MB)
-테스트 7 〉	통과 (4.48ms, 13MB)
-테스트 8 〉	통과 (4.18ms, 13MB)
-테스트 9 〉	통과 (15.89ms, 14.3MB)
-테스트 10 〉	통과 (148.89ms, 21.4MB)
-테스트 11 〉	통과 (111.96ms, 20.6MB)
-테스트 12 〉	통과 (115.08ms, 20.6MB)
-테스트 13 〉	통과 (100.93ms, 20.5MB)
+테스트 3 〉	통과 (0.05ms, 10.3MB)
+테스트 4 〉	통과 (0.13ms, 10.3MB)
+테스트 5 〉	통과 (0.91ms, 10.5MB)
+테스트 6 〉	통과 (2.55ms, 13.1MB)
+테스트 7 〉	통과 (2.86ms, 13.1MB)
+테스트 8 〉	통과 (3.89ms, 13.1MB)
+테스트 9 〉	통과 (15.31ms, 14.2MB)
+테스트 10 〉	통과 (123.87ms, 21.4MB)
+테스트 11 〉	통과 (100.11ms, 20.5MB)
+테스트 12 〉	통과 (99.24ms, 20.6MB)
+테스트 13 〉	통과 (98.55ms, 20.6MB)
 '''
