@@ -1,3 +1,5 @@
+# 사실 알고보니 재귀의 고수?!
+
 from collections import defaultdict
 
 def move_parent(tree, name, money):
