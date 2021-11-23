@@ -9,6 +9,7 @@
 + 일주일에 2문제
   + 11/17 부터 1일 1문제 
 + [Programmers](https://programmers.co.kr/) 에 있는 난이도(Level 2 ~ 3)
++ 주석달기
 
 ## Members
 
