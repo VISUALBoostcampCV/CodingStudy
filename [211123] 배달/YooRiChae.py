@@ -1,5 +1,3 @@
-# 어디서 문제가 생기는걸까요....??ㅠㅠ
-
 import heapq
 
 def solution(N, road, K):
