@@ -2,23 +2,23 @@ from collections import defaultdict
 
 def solution(N, road, K):
     answer = set([0])
-    distance = [500000]*N
+    distance = [500000]*N           # 최대값으로 초기화
     distance[0] = 0
     cost_map = defaultdict(list)
     
     for i,j,cost in road:
         i,j = i-1,j-1
-        cost_map[i].append((j,cost))
+        cost_map[i].append((j,cost))    # 노드 기준으로 자신과 연결되어있는 노드와 cost를 저장
         cost_map[j].append((i,cost))
     
-    def dp(city):
+    def dp(city):                       
         for idx,c in cost_map[city]:
-            if distance[city]+c<distance[idx]:
-                distance[idx] = distance[city]+c
+            if distance[city]+c<distance[idx]:      # 현재 노드의 거리 + 코스트 < 다음 노드 거리
+                distance[idx] = distance[city]+c    # 작은 것으로 갱신
                 dp(idx)
     dp(0)        
 
-    return len([d for d in distance if d<=K])
+    return len([d for d in distance if d<=K])       # 1번 노드로부터 거리가 K이하인 도시 개수 출력
 
     '''
     테스트 1 〉	통과 (0.02ms, 10.3MB)
