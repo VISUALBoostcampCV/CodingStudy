@@ -1,5 +1,3 @@
-# 어디서 문제가 생기는걸까요....??ㅠㅠ
-
 import heapq
 
 def solution(N, road, K):
@@ -8,13 +6,13 @@ def solution(N, road, K):
         graph[i] = {}
     
     for start, destination, distance in road:
-        if start > destination:
-            start, destination = destination, start
         if destination in graph[start]:
             if graph[start][destination] > distance:
                 graph[start][destination] = distance
+                graph[destination][start] = distance
         else:
             graph[start][destination] = distance
+            graph[destination][start] = distance
             
     def dijkstra(graph, start):
         queue = []
@@ -45,36 +43,36 @@ def solution(N, road, K):
 
 '''
 정확성  테스트
-테스트 1 〉	실패 (0.02ms, 10.3MB)
+테스트 1 〉	통과 (0.02ms, 10.3MB)
 테스트 2 〉	통과 (0.03ms, 10.3MB)
-테스트 3 〉	실패 (0.03ms, 10.3MB)
+테스트 3 〉	통과 (0.02ms, 10.3MB)
 테스트 4 〉	통과 (0.02ms, 10.3MB)
-테스트 5 〉	통과 (0.02ms, 10.3MB)
-테스트 6 〉	실패 (0.02ms, 10.3MB)
-테스트 7 〉	실패 (0.03ms, 10.3MB)
-테스트 8 〉	통과 (0.02ms, 10.4MB)
-테스트 9 〉	통과 (0.01ms, 10.3MB)
-테스트 10 〉	실패 (0.02ms, 10.3MB)
-테스트 11 〉	실패 (0.02ms, 10.3MB)
-테스트 12 〉	실패 (0.03ms, 10.3MB)
-테스트 13 〉	실패 (0.04ms, 10.3MB)
-테스트 14 〉	실패 (0.45ms, 10.3MB)
-테스트 15 〉	실패 (0.32ms, 10.4MB)
-테스트 16 〉	실패 (0.02ms, 10.3MB)
-테스트 17 〉	실패 (0.02ms, 10.3MB)
-테스트 18 〉	실패 (0.18ms, 10.4MB)
-테스트 19 〉	실패 (0.38ms, 10.4MB)
-테스트 20 〉	실패 (0.18ms, 10.4MB)
-테스트 21 〉	실패 (0.41ms, 10.5MB)
-테스트 22 〉	실패 (0.16ms, 10.3MB)
-테스트 23 〉	실패 (0.39ms, 10.6MB)
-테스트 24 〉	실패 (0.32ms, 10.4MB)
-테스트 25 〉	실패 (0.54ms, 10.5MB)
-테스트 26 〉	실패 (0.52ms, 10.5MB)
-테스트 27 〉	실패 (0.51ms, 10.5MB)
-테스트 28 〉	실패 (0.49ms, 10.5MB)
-테스트 29 〉	실패 (0.56ms, 10.5MB)
-테스트 30 〉	통과 (0.43ms, 10.5MB)
-테스트 31 〉	통과 (0.09ms, 10.4MB)
-테스트 32 〉	통과 (0.12ms, 10.3MB)
+테스트 5 〉	통과 (0.03ms, 10.3MB)
+테스트 6 〉	통과 (0.02ms, 10.3MB)
+테스트 7 〉	통과 (0.02ms, 10.3MB)
+테스트 8 〉	통과 (0.02ms, 10.3MB)
+테스트 9 〉	통과 (0.02ms, 10.3MB)
+테스트 10 〉	통과 (0.04ms, 10.3MB)
+테스트 11 〉	통과 (0.03ms, 10.4MB)
+테스트 12 〉	통과 (0.05ms, 10.3MB)
+테스트 13 〉	통과 (0.05ms, 10.3MB)
+테스트 14 〉	통과 (0.44ms, 10.4MB)
+테스트 15 〉	통과 (1.02ms, 10.4MB)
+테스트 16 〉	통과 (0.03ms, 10.3MB)
+테스트 17 〉	통과 (0.04ms, 10.3MB)
+테스트 18 〉	통과 (0.37ms, 10.3MB)
+테스트 19 〉	통과 (1.15ms, 10.4MB)
+테스트 20 〉	통과 (0.25ms, 10.3MB)
+테스트 21 〉	통과 (0.72ms, 10.5MB)
+테스트 22 〉	통과 (0.38ms, 10.3MB)
+테스트 23 〉	통과 (0.79ms, 10.5MB)
+테스트 24 〉	통과 (0.74ms, 10.3MB)
+테스트 25 〉	통과 (1.57ms, 10.6MB)
+테스트 26 〉	통과 (0.88ms, 10.5MB)
+테스트 27 〉	통과 (0.97ms, 10.5MB)
+테스트 28 〉	통과 (0.88ms, 10.7MB)
+테스트 29 〉	통과 (1.20ms, 10.6MB)
+테스트 30 〉	통과 (1.02ms, 10.6MB)
+테스트 31 〉	통과 (0.06ms, 10.4MB)
+테스트 32 〉	통과 (0.08ms, 10.3MB)
 '''
