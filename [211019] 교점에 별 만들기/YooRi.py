@@ -25,10 +25,7 @@ def solution(line):
         answer[y][x] = "*"
     a = []
     for line in answer:
-        b=""
-        for letter in line:
-            b+=letter
-        a.append(b)
+        a.append("".join(line))
     return a
 
 '''
