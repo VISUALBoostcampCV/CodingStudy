@@ -1,19 +1,27 @@
 from itertools import permutations
 
 def solution(k, dungeons):
+
+    # 조합에 있는 던전 순서대로 다 탐험할 수 있는지
     def check(now, d_list):
         for m,c in d_list:
+            # 못깨면 바로 return 
             if now < m:
                 return False
             now -=c
         return True
 
     answer = -1
+
+    # 몇개의 던전을 탐험할지..
     for n in range(1, len(dungeons)+1):
+        # 탐험 순서 가져오기
         dungeons_list = list(permutations(dungeons, n))
         for dungeon in dungeons_list:
+            # 조합에 있는 던전 순서대로 다 탐험할 수 있는지 
             if check(k, dungeon):
                 answer = n
+                # 탐험할 수 있으면 다음 갯수로
                 break
                              
     return answer
