@@ -1,18 +1,18 @@
 import math
-def solution(clothes): 
+def solution(clothes):
     answer = 0
-    type = []
+    types = []
     howmany = []
-    for c,t in clothes:
-        if t not in type:
-            type.append(t)
+    for c, t in clothes:
+        if t not in types:
+            types.append(t)
+            # 입거나 안입거나 2가지 방법
             howmany.append(2)
         else:
-            howmany[type.index(t)]+=1
-    
+            # 입는 경우만 
+            howmany[types.index(t)] +=1
     answer = math.prod(howmany) - 1
     return answer
-
 '''
 정확성  테스트
 테스트 1 〉	통과 (0.01ms, 10.2MB)
