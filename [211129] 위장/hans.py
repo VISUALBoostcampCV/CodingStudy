@@ -1,12 +1,9 @@
+from collections import defaultdict
 def solution(clothes):
     answer = 0
-    d = dict()
+    d = defaultdict(list)
     for item in clothes:
-        if item[1] not in d:
-            d[item[1]] = [item[0]]
-        else:
-            d[item[1]].append(item[0]) #dict에 values들 넣기
-            
+        d[item[1]].append(item[0])            
     for k in d:
         answer += answer * len(d[k]) + len(d[k])
                         
