@@ -43,5 +43,6 @@
 |11/23|[다단계 칫솔 판매](https://programmers.co.kr/learn/courses/30/lessons/77486)|3|
 |11/24|[배달](https://programmers.co.kr/learn/courses/30/lessons/12978?language=python3)|2|
 |11/25|[풍선 터트리기](https://programmers.co.kr/learn/courses/30/lessons/68646)|3|
-|11/26|[디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/68646)|3|
-|11/29|[위장](https://programmers.co.kr/learn/courses/30/lessons/42578)|2|
+|11/26|[피로도](https://programmers.co.kr/learn/courses/30/lessons/87946)|2|
+|11/29|[디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627)|3|
+|11/30|[위장](https://programmers.co.kr/learn/courses/30/lessons/42578)|2|
