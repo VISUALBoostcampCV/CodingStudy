@@ -1,5 +1,5 @@
 from functools import reduce
-def rotate(m, d):
+def rotate(m, d):   # 회전 함수
     if d==0:
         return m
     N = len(m)
@@ -25,16 +25,16 @@ def solution(key, lock):
     for d in r:
         new_key = rotate(key, d)
         miss = 0
-        for l_y in range(-N+1,N):
+        for l_y in range(-N+1,N):           # lock 좌표
             for l_x in range(-N+1,N):
                 fill = 0
                 flag = False
-                for k_y in range(M):
+                for k_y in range(M):        # key 좌표
                     for k_x in range(M):
                         y,x = l_y+k_y, l_x+k_x
                         if y < 0 or x<0 or y>=N or x>=N:
                             continue
-                        if new_key[k_y][k_x] and lock[y][x]==0:
+                        if new_key[k_y][k_x] and lock[y][x]==0:     # 홈에 딱 맞으면 1
                             fill+=1
                         elif new_key[k_y][k_x] and lock[y][x]:
                             flag = True
