@@ -42,4 +42,19 @@ def solution(grid):
                 cnt = search(grid,[y,x],[my,mx],mem)
                 if cnt:
                     answer.append(cnt)        
-    return answer
+    return sorted(answer)
+
+    '''
+    테스트 1 〉	통과 (0.65ms, 10.3MB)
+    테스트 2 〉	통과 (1.52ms, 10.4MB)
+    테스트 3 〉	통과 (1.52ms, 10.3MB)
+    테스트 4 〉	통과 (75.30ms, 13.3MB)
+    테스트 5 〉	통과 (134.78ms, 16.1MB)
+    테스트 6 〉	통과 (167.12ms, 16.9MB)
+    테스트 7 〉	통과 (2688.39ms, 99.1MB)
+    테스트 8 〉	통과 (1698.37ms, 52.7MB)
+    테스트 9 〉	통과 (2228.27ms, 114MB)
+    테스트 10 〉	통과 (2599.18ms, 135MB)
+    테스트 11 〉	통과 (2948.18ms, 142MB)
+
+    '''
