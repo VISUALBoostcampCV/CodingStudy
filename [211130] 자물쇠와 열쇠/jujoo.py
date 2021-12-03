@@ -19,49 +19,51 @@ def solution(key, lock):
                 return True
         # 키가 안맞으면 다음 위치 추가
         for d_row, d_col in [(1, 0), (0, 1)]:
-            if cur_row + d_row >= len(mat) or cur_col + d_col >= len(mat[0]):
+            if cur_row + d_row >= len(mat) - 1 or cur_col + d_col >= len(mat[0]):
                 continue
             q.append((cur_row + d_row, cur_col + d_col))
             visited.append((cur_row, cur_col))
     return answer
 
-# 이전 풀이
-def attach(x, y, m, key, figure):
-    for i in range(m):
-        for j in range(m):
-            figure[x + i][y + j] += key[i][j]
+solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[1, 1, 1], [1, 1, 0], [1, 0, 1]])
 
-def detach(x, y, m, key, figure):
-    for i in range(m):
-        for j in range(m):
-            figure[x + i][y + j] -= key[i][j]
+# # 이전 풀이
+# def attach(x, y, m, key, figure):
+#     for i in range(m):
+#         for j in range(m):
+#             figure[x + i][y + j] += key[i][j]
 
-def check(figure, m, n):
-    for i in range(n):
-        for j in range(n):
-            if figure[m + i][m + j] != 1:
-                return False
-    return True
+# def detach(x, y, m, key, figure):
+#     for i in range(m):
+#         for j in range(m):
+#             figure[x + i][y + j] -= key[i][j]
 
-def rotate(key):
-    return list(zip(*key[::-1]))
+# def check(figure, m, n):
+#     for i in range(n):
+#         for j in range(n):
+#             if figure[m + i][m + j] != 1:
+#                 return False
+#     return True
 
-def solution(key, lock):
-    m, n = len(key), len(lock)
+# def rotate(key):
+#     return list(zip(*key[::-1]))
 
-    figure = [[0] * (2 * m + n) for _ in range(m * 2 + n)]
+# def solution(key, lock):
+#     m, n = len(key), len(lock)
 
-    for i in range(n):
-        for j in range(n):
-            figure[m + i][m + j] = lock[i][j]
+#     figure = [[0] * (2 * m + n) for _ in range(m * 2 + n)]
 
-    rotated_key = key
-    for _ in range(4):
-        rotated_key = rotate(rotated_key)
-        for x in range(1, m + n):
-            for y in range(1, m + n):
-                attach(x, y, m, rotated_key, figure)
-                if check(figure, m, n):
-                    return True
-                detach(x, y, m, rotated_key, figure)
-    return False
+#     for i in range(n):
+#         for j in range(n):
+#             figure[m + i][m + j] = lock[i][j]
+
+#     rotated_key = key
+#     for _ in range(4):
+#         rotated_key = rotate(rotated_key)
+#         for x in range(1, m + n):
+#             for y in range(1, m + n):
+#                 attach(x, y, m, rotated_key, figure)
+#                 if check(figure, m, n):
+#                     return True
+#                 detach(x, y, m, rotated_key, figure)
+#     return False
