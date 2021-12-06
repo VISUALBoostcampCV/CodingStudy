@@ -1,15 +1,15 @@
 def search(p):
     move = [(0,1),(0,-1),(1,0),(-1,0)]  # 우, 좌, 하, 상
-    for y in range(5):
+    for y in range(5):                  # 완전탐색
         for x in range(5):
-            if p[y][x]=='P':
+            if p[y][x]=='P':            # P 바로 옆에 P있다면  return 0
                 for my, mx in move:
                     new_y, new_x = y+my,x+mx
                     if new_y<0 or new_x<0 or new_y>=5 or new_x>=5:
                         continue
                     if p[new_y][new_x]=='P':
                         return 0
-            elif p[y][x]=='O':
+            elif p[y][x]=='O':          # O 바로 옆에 P가 두개이상이면 return 0
                 cnt = 0
                 for my, mx in move:
                     new_y, new_x = y+my,x+mx
@@ -19,7 +19,7 @@ def search(p):
                         cnt+=1
                 if cnt>=2:
                     return 0
-    return 1
+    return 1                            # 별 일 없으면 return 1
                         
                         
 
@@ -27,7 +27,7 @@ def solution(places):
     answer = []
     
     for place in places:
-        answer.append(search(place))
+        answer.append(search(place))    # 거리두기 지키는지 검색
     return answer
 
 '''
