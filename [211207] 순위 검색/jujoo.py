@@ -39,12 +39,7 @@ from collections import defaultdict
 def solution(info, query):
     answer = []
     data = defaultdict(list)
-    for l in ['cpp', 'java', 'python', '-']:
-        for j in ['backend', 'frontend', '-']:
-            for y in ['junior', 'senior', '-']:
-                for f in ['chicken', 'pizza', '-']:
-                    data[(l, j, y, f)] = []
-    
+                    
     for i in info:
         q, s = i.rsplit(' ', 1)
         l, j, y, f = q.split()
@@ -52,8 +47,7 @@ def solution(info, query):
             for b in [j, '-']:
                 for c in [y, '-']:
                     for d in [f, '-']:
-                        if (a, b, c, d) in data:
-                            data[(a, b, c, d)].append(((a, b, c, d), int(s)))
+                        data[(a, b, c, d)].append(((a, b, c, d), int(s)))
     
     for q in query:
         q, s = q.rsplit(' ', 1)
