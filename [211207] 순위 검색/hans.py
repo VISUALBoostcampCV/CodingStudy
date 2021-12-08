@@ -1,4 +1,38 @@
 
+# 새 코드 (시간초과)
+from collections import defaultdict
+import copy
+def solution(info, query):
+    answer = []
+    d = defaultdict(list)
+    scores = []
+    
+    for idx, inf in enumerate(info):
+        inf = inf.split()
+        scores.append(int(inf[-1]))
+        for i in inf[:-1]:
+            d[i].append(idx)
+    d['-'] = list(range(len(info)))
+    
+    mem_origin = [[0]*len(info) for i in range(4)]
+    
+    for q in query:
+        mem = copy.deepcopy(mem_origin)
+        q = q.split(' and ')
+        q.extend(q.pop().split())
+        q[-1] = int(q[-1])
+        for idx, qq in enumerate(q[:-1]):
+            for i in d[qq]:
+                if idx==0 or mem[idx-1][i]:
+                    mem[idx][i] = 1
+        cnt = 0
+        for idx, m in enumerate(mem[-1]):
+            if m and scores[idx]>=q[-1]:
+                cnt+=1
+        answer.append(cnt)
+    return answer
+
+'''
 #이전 코드
 
 from itertools import combinations
@@ -38,7 +72,7 @@ def solution(info, query):
     
     return answer
 
-'''
+
 테스트 1 〉	통과 (0.60ms, 10.4MB)
 테스트 2 〉	통과 (0.59ms, 10.4MB)
 테스트 3 〉	통과 (0.86ms, 10.5MB)
