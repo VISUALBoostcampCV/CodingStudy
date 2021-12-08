@@ -35,56 +35,59 @@ def solution(info, query):
         condition[-1], score = condition[-1].split()
         score = int(score)
         
-        people = set(range(len(info)))
+        people = set()
         
-        # 점수 외에 조건이 있는 경우
-        if set(condition) != {'-'}:
-            for c in condition:
-                # 모든 사람이 해당하는 조건인 경우 넘어감
-                if c =='-' or len(info_dict[c]) == len(info):
-                    continue
-
-                people &= info_dict[c]
-        
-        # 사람 수 세기
-        count = 0
-        if score_list[0][0] >= score:
-            count = len(people)
-        elif score_list[-1][0] < score:
-            count = 0
+        # 점수 먼저 체크
+        if score_list[-1][0] < score:
+            answer.append(0)
+            continue
+        elif score_list[0][0] >= score:
+            people = set(range(len(info)))
         else:
             index = score_index_search()
-            _people = set(map(lambda x: x[1], score_list[index:]))
-            count = len(people & _people)
-                
-        answer.append(count)
+            people = set(map(lambda x: x[1], score_list[index:]))
         
+        # 점수 외에 조건 없는 경우
+        if set(condition) == {'-'}:
+            answer.append(len(people))
+            continue
+        
+        # 조건 체크
+        for c in condition:
+            # 모든 사람이 해당하는 조건인 경우 넘어감
+            if c =='-' or len(info_dict[c]) == len(info):
+                continue
+            
+            people &= info_dict[c]
+        
+        answer.append(len(people))
+    
     return answer
 
 
-    '''
-    정확성  테스트
-    테스트 1 〉	통과 (0.11ms, 10.5MB)
-    테스트 2 〉	통과 (0.12ms, 10.5MB)
-    테스트 3 〉	통과 (0.56ms, 10.5MB)
-    테스트 4 〉	통과 (4.82ms, 10.6MB)
-    테스트 5 〉	통과 (13.37ms, 10.6MB)
-    테스트 6 〉	통과 (27.11ms, 10.6MB)
-    테스트 7 〉	통과 (15.59ms, 10.8MB)
-    테스트 8 〉	통과 (65.30ms, 14.1MB)
-    테스트 9 〉	통과 (74.72ms, 14MB)
-    테스트 10 〉	통과 (73.99ms, 14.1MB)
-    테스트 11 〉	통과 (12.93ms, 10.6MB)
-    테스트 12 〉	통과 (26.92ms, 10.6MB)
-    테스트 13 〉	통과 (16.10ms, 10.8MB)
-    테스트 14 〉	통과 (62.78ms, 12.1MB)
-    테스트 15 〉	통과 (62.65ms, 12.1MB)
-    테스트 16 〉	통과 (13.76ms, 10.5MB)
-    테스트 17 〉	통과 (27.51ms, 10.7MB)
-    테스트 18 〉	통과 (65.08ms, 12MB)
-    효율성  테스트
-    테스트 1 〉	실패 (시간 초과)
-    테스트 2 〉	실패 (시간 초과)
-    테스트 3 〉	실패 (시간 초과)
-    테스트 4 〉	실패 (시간 초과)
-    '''
+'''
+정확성  테스트
+테스트 1 〉	통과 (0.15ms, 10.5MB)
+테스트 2 〉	통과 (0.10ms, 10.5MB)
+테스트 3 〉	통과 (0.49ms, 10.5MB)
+테스트 4 〉	통과 (4.03ms, 10.6MB)
+테스트 5 〉	통과 (9.63ms, 10.5MB)
+테스트 6 〉	통과 (17.61ms, 10.6MB)
+테스트 7 〉	통과 (13.38ms, 10.7MB)
+테스트 8 〉	통과 (38.96ms, 12.5MB)
+테스트 9 〉	통과 (40.17ms, 13.2MB)
+테스트 10 〉	통과 (43.00ms, 13.3MB)
+테스트 11 〉	통과 (10.15ms, 10.6MB)
+테스트 12 〉	통과 (18.58ms, 10.6MB)
+테스트 13 〉	통과 (12.38ms, 10.7MB)
+테스트 14 〉	통과 (36.25ms, 11.6MB)
+테스트 15 〉	통과 (35.84ms, 11.7MB)
+테스트 16 〉	통과 (10.40ms, 10.6MB)
+테스트 17 〉	통과 (18.26ms, 10.6MB)
+테스트 18 〉	통과 (36.56ms, 11.7MB)
+효율성  테스트
+테스트 1 〉	실패 (시간 초과)
+테스트 2 〉	실패 (시간 초과)
+테스트 3 〉	실패 (시간 초과)
+테스트 4 〉	실패 (시간 초과)
+'''
