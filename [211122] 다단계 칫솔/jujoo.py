@@ -1,26 +1,17 @@
+class Sell:
+    def __init__(self, enroll, referral, seller, amount):
+        self.answer = [0] * len(enroll)
+        self.referral = referral
+        self.enroll_idx = {val : idx for idx, val in enumerate(enroll)}
+        for cur_seller, cur_amount in zip(seller, amount):
+            self.dfs(cur_seller, cur_amount * 100)
+    def dfs(self, cur_seller, cur_amount):
+        if cur_amount < 1 or cur_seller == '-':
+            return
+        cur_idx = self.enroll_idx[cur_seller]
+        self.answer[cur_idx] += cur_amount - int(cur_amount * 0.1)
+        self.dfs(self.referral[cur_idx], int(cur_amount * 0.1))
+
 def solution(enroll, referral, seller, amount):
-    loc_data = {node : idx for idx, node in enumerate(enroll)}
-    result = [0] * len(enroll)
-    
-    root_list = []
-    for leaf in seller:
-        tmp = [leaf]
-        cur_idx = loc_data[leaf]
-        while referral[cur_idx] != '-':
-            tmp.append(referral[cur_idx])
-            cur_idx = loc_data[referral[cur_idx]]
-        tmp.append('center')
-        root_list.append(tmp)
-    
-    for idx, price in enumerate(amount):
-        price *= 100
-        cur_root = root_list[idx]
-        for node in cur_root[:-1]:
-            price_10 = int(price * 0.1)
-            result[loc_data[node]] += price - price_10
-            if price_10 < 1:
-                break
-            price = price_10
-    return result
-    
-    
+    sell = Sell(enroll, referral, seller, amount)
+    return sell.answer
